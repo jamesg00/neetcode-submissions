@@ -1,0 +1,46 @@
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        rows= len(matrix)
+        cols = len(matrix[0])
+
+        l = 0
+        r = rows*cols-1
+
+        while l <= r:
+            m = l + (r-l)// 2
+            row = m//cols
+            col = m%cols
+
+            if target > matrix[row][col]:
+                l = m + 1
+            elif target < matrix[row][col]:
+                r = m - 1
+            else:
+                return True
+        return False
+
+
+
+
+
+
+        
+
+
+
+
+        
+        #O(log(n*m))
+
+        '''
+        #brute force solution using i and j to iterate thru matrix and finding if its target 
+        #o(n*m) time (m length of rows, n length of cols) || O(1) space (we dont create a lst or anyting)
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if matrix[i][j] == target: 
+                    return True
+        return False 
+        '''
+
+
+        
