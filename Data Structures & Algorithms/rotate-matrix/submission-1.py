@@ -1,0 +1,21 @@
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+
+        matrix.reverse()
+
+
+        #transpose then swap matrixes indexes
+
+        for i in range(len(matrix)):
+            for j in range(i, len(matrix[0])):
+                
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+
+
+
+
+                
+
+
+        
